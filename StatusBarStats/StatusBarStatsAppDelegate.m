@@ -10,11 +10,28 @@
 
 @implementation StatusBarStatsAppDelegate
 
-@synthesize window;
+//@synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
     // Insert code here to initialize your application
+}
+
+- (void)awakeFromNib
+{
+    // - (NSStatusItem *)statusItemWithLength:(CGFloat)length
+    // length can be:
+    // NSVariableStatusItemLength - Makes the status item length dynamic
+    // NSSquareStatusItemLength - Sets status item length to match thickness
+    statusItem = [[[NSStatusBar systemStatusBar]
+                   statusItemWithLength:NSVariableStatusItemLength] retain];
+    [statusItem setMenu:statusMenu];
+    // To use an image instead of text:
+    // - (void)setImage:(NSImage *)image
+    // - (void)setAlternateImage:(NSImage *)image
+    [statusItem setTitle:@"Status"];
+    // Highlight when clicked on by user
+    [statusItem setHighlightMode:YES];
 }
 
 @end

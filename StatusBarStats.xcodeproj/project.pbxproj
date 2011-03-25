@@ -35,18 +35,18 @@
 		9E19F860133C314500E053B6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		9E19F861133C314500E053B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		9E19F862133C314500E053B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		9E19F865133C314500E053B6 /* StatusBarStats-Info.plist */ = {isa = PBXFileReference; path = "StatusBarStats-Info.plist"; sourceTree = "<group>"; };
+		9E19F865133C314500E053B6 /* StatusBarStats-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StatusBarStats-Info.plist"; sourceTree = "<group>"; };
 		9E19F867133C314500E053B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9E19F869133C314500E053B6 /* StatusBarStats-Prefix.pch */ = {isa = PBXFileReference; path = "StatusBarStats-Prefix.pch"; sourceTree = "<group>"; };
+		9E19F869133C314500E053B6 /* StatusBarStats-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StatusBarStats-Prefix.pch"; sourceTree = "<group>"; };
 		9E19F86A133C314500E053B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E19F86D133C314500E053B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
-		9E19F86F133C314500E053B6 /* StatusBarStatsAppDelegate.h */ = {isa = PBXFileReference; path = StatusBarStatsAppDelegate.h; sourceTree = "<group>"; };
+		9E19F86F133C314500E053B6 /* StatusBarStatsAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusBarStatsAppDelegate.h; sourceTree = "<group>"; };
 		9E19F870133C314500E053B6 /* StatusBarStatsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusBarStatsAppDelegate.m; sourceTree = "<group>"; };
 		9E19F873133C314500E053B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		9E19F87A133C314500E053B6 /* StatusBarStatsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatusBarStatsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E19F880133C314500E053B6 /* StatusBarStatsTests-Info.plist */ = {isa = PBXFileReference; path = "StatusBarStatsTests-Info.plist"; sourceTree = "<group>"; };
+		9E19F880133C314500E053B6 /* StatusBarStatsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "StatusBarStatsTests-Info.plist"; sourceTree = "<group>"; };
 		9E19F882133C314500E053B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		9E19F884133C314500E053B6 /* StatusBarStatsTests-Prefix.pch */ = {isa = PBXFileReference; path = "StatusBarStatsTests-Prefix.pch"; sourceTree = "<group>"; };
+		9E19F884133C314500E053B6 /* StatusBarStatsTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StatusBarStatsTests-Prefix.pch"; sourceTree = "<group>"; };
 		9E19F885133C314500E053B6 /* StatusBarStatsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusBarStatsTests.h; sourceTree = "<group>"; };
 		9E19F887133C314500E053B6 /* StatusBarStatsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusBarStatsTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
