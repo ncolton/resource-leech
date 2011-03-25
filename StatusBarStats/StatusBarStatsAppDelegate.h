@@ -10,11 +10,8 @@
 
 @interface StatusBarStatsAppDelegate : NSObject <NSApplicationDelegate> {
 @private
-//    NSWindow *window;
     IBOutlet NSMenu *statusMenu;
     NSStatusItem *statusItem;
 }
-
-//@property (assign) IBOutlet NSWindow *window;
 
 @end
