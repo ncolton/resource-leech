@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9E19F85E133C314500E053B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E19F85D133C314500E053B6 /* Cocoa.framework */; };
+		9E19F868133C314500E053B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E19F866133C314500E053B6 /* InfoPlist.strings */; };
+		9E19F86B133C314500E053B6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E19F86A133C314500E053B6 /* main.m */; };
+		9E19F86E133C314500E053B6 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9E19F86C133C314500E053B6 /* Credits.rtf */; };
+		9E19F871133C314500E053B6 /* StatusBarStatsAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E19F870133C314500E053B6 /* StatusBarStatsAppDelegate.m */; };
+		9E19F874133C314500E053B6 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E19F872133C314500E053B6 /* MainMenu.xib */; };
+		9E19F87B133C314500E053B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E19F85D133C314500E053B6 /* Cocoa.framework */; };
+		9E19F883133C314500E053B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E19F881133C314500E053B6 /* InfoPlist.strings */; };
+		9E19F886133C314500E053B6 /* StatusBarStatsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 9E19F885133C314500E053B6 /* StatusBarStatsTests.h */; };
+		9E19F888133C314500E053B6 /* StatusBarStatsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E19F887133C314500E053B6 /* StatusBarStatsTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9E19F87C133C314500E053B6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9E19F850133C314400E053B6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9E19F858133C314500E053B6;
+			remoteInfo = StatusBarStats;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9E19F859133C314500E053B6 /* StatusBarStats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StatusBarStats.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E19F85D133C314500E053B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9E19F860133C314500E053B6 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9E19F861133C314500E053B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9E19F862133C314500E053B6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9E19F865133C314500E053B6 /* StatusBarStats-Info.plist */ = {isa = PBXFileReference; path = "StatusBarStats-Info.plist"; sourceTree = "<group>"; };
+		9E19F867133C314500E053B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9E19F869133C314500E053B6 /* StatusBarStats-Prefix.pch */ = {isa = PBXFileReference; path = "StatusBarStats-Prefix.pch"; sourceTree = "<group>"; };
+		9E19F86A133C314500E053B6 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9E19F86D133C314500E053B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9E19F86F133C314500E053B6 /* StatusBarStatsAppDelegate.h */ = {isa = PBXFileReference; path = StatusBarStatsAppDelegate.h; sourceTree = "<group>"; };
+		9E19F870133C314500E053B6 /* StatusBarStatsAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusBarStatsAppDelegate.m; sourceTree = "<group>"; };
+		9E19F873133C314500E053B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9E19F87A133C314500E053B6 /* StatusBarStatsTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StatusBarStatsTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E19F880133C314500E053B6 /* StatusBarStatsTests-Info.plist */ = {isa = PBXFileReference; path = "StatusBarStatsTests-Info.plist"; sourceTree = "<group>"; };
+		9E19F882133C314500E053B6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9E19F884133C314500E053B6 /* StatusBarStatsTests-Prefix.pch */ = {isa = PBXFileReference; path = "StatusBarStatsTests-Prefix.pch"; sourceTree = "<group>"; };
+		9E19F885133C314500E053B6 /* StatusBarStatsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusBarStatsTests.h; sourceTree = "<group>"; };
+		9E19F887133C314500E053B6 /* StatusBarStatsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusBarStatsTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9E19F856133C314500E053B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E19F85E133C314500E053B6 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E19F876133C314500E053B6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E19F87B133C314500E053B6 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9E19F84E133C314400E053B6 = {
+			isa = PBXGroup;
+			children = (
+				9E19F863133C314500E053B6 /* StatusBarStats */,
+				9E19F87E133C314500E053B6 /* StatusBarStatsTests */,
+				9E19F85C133C314500E053B6 /* Frameworks */,
+				9E19F85A133C314500E053B6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9E19F85A133C314500E053B6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9E19F859133C314500E053B6 /* StatusBarStats.app */,
+				9E19F87A133C314500E053B6 /* StatusBarStatsTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9E19F85C133C314500E053B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E19F85D133C314500E053B6 /* Cocoa.framework */,
+				9E19F85F133C314500E053B6 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9E19F85F133C314500E053B6 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E19F860133C314500E053B6 /* AppKit.framework */,
+				9E19F861133C314500E053B6 /* CoreData.framework */,
+				9E19F862133C314500E053B6 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9E19F863133C314500E053B6 /* StatusBarStats */ = {
+			isa = PBXGroup;
+			children = (
+				9E19F86F133C314500E053B6 /* StatusBarStatsAppDelegate.h */,
+				9E19F870133C314500E053B6 /* StatusBarStatsAppDelegate.m */,
+				9E19F872133C314500E053B6 /* MainMenu.xib */,
+				9E19F864133C314500E053B6 /* Supporting Files */,
+			);
+			path = StatusBarStats;
+			sourceTree = "<group>";
+		};
+		9E19F864133C314500E053B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9E19F865133C314500E053B6 /* StatusBarStats-Info.plist */,
+				9E19F866133C314500E053B6 /* InfoPlist.strings */,
+				9E19F869133C314500E053B6 /* StatusBarStats-Prefix.pch */,
+				9E19F86A133C314500E053B6 /* main.m */,
+				9E19F86C133C314500E053B6 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9E19F87E133C314500E053B6 /* StatusBarStatsTests */ = {
+			isa = PBXGroup;
+			children = (
+				9E19F885133C314500E053B6 /* StatusBarStatsTests.h */,
+				9E19F887133C314500E053B6 /* StatusBarStatsTests.m */,
+				9E19F87F133C314500E053B6 /* Supporting Files */,
+			);
+			path = StatusBarStatsTests;
+			sourceTree = "<group>";
+		};
+		9E19F87F133C314500E053B6 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9E19F880133C314500E053B6 /* StatusBarStatsTests-Info.plist */,
+				9E19F881133C314500E053B6 /* InfoPlist.strings */,
+				9E19F884133C314500E053B6 /* StatusBarStatsTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9E19F858133C314500E053B6 /* StatusBarStats */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E19F88B133C314500E053B6 /* Build configuration list for PBXNativeTarget "StatusBarStats" */;
+			buildPhases = (
+				9E19F855133C314500E053B6 /* Sources */,
+				9E19F856133C314500E053B6 /* Frameworks */,
+				9E19F857133C314500E053B6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StatusBarStats;
+			productName = StatusBarStats;
+			productReference = 9E19F859133C314500E053B6 /* StatusBarStats.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9E19F879133C314500E053B6 /* StatusBarStatsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9E19F88E133C314500E053B6 /* Build configuration list for PBXNativeTarget "StatusBarStatsTests" */;
+			buildPhases = (
+				9E19F875133C314500E053B6 /* Sources */,
+				9E19F876133C314500E053B6 /* Frameworks */,
+				9E19F877133C314500E053B6 /* Resources */,
+				9E19F878133C314500E053B6 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9E19F87D133C314500E053B6 /* PBXTargetDependency */,
+			);
+			name = StatusBarStatsTests;
+			productName = StatusBarStatsTests;
+			productReference = 9E19F87A133C314500E053B6 /* StatusBarStatsTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9E19F850133C314400E053B6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = OddMagic;
+			};
+			buildConfigurationList = 9E19F853133C314400E053B6 /* Build configuration list for PBXProject "StatusBarStats" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9E19F84E133C314400E053B6;
+			productRefGroup = 9E19F85A133C314500E053B6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9E19F858133C314500E053B6 /* StatusBarStats */,
+				9E19F879133C314500E053B6 /* StatusBarStatsTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9E19F857133C314500E053B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E19F868133C314500E053B6 /* InfoPlist.strings in Resources */,
+				9E19F86E133C314500E053B6 /* Credits.rtf in Resources */,
+				9E19F874133C314500E053B6 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E19F877133C314500E053B6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E19F883133C314500E053B6 /* InfoPlist.strings in Resources */,
+				9E19F886133C314500E053B6 /* StatusBarStatsTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9E19F878133C314500E053B6 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9E19F855133C314500E053B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E19F86B133C314500E053B6 /* main.m in Sources */,
+				9E19F871133C314500E053B6 /* StatusBarStatsAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9E19F875133C314500E053B6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E19F888133C314500E053B6 /* StatusBarStatsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9E19F87D133C314500E053B6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9E19F858133C314500E053B6 /* StatusBarStats */;
+			targetProxy = 9E19F87C133C314500E053B6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9E19F866133C314500E053B6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E19F867133C314500E053B6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9E19F86C133C314500E053B6 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E19F86D133C314500E053B6 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		9E19F872133C314500E053B6 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E19F873133C314500E053B6 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		9E19F881133C314500E053B6 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9E19F882133C314500E053B6 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9E19F889133C314500E053B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9E19F88A133C314500E053B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9E19F88C133C314500E053B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StatusBarStats/StatusBarStats-Prefix.pch";
+				INFOPLIST_FILE = "StatusBarStats/StatusBarStats-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9E19F88D133C314500E053B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StatusBarStats/StatusBarStats-Prefix.pch";
+				INFOPLIST_FILE = "StatusBarStats/StatusBarStats-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		9E19F88F133C314500E053B6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StatusBarStats.app/Contents/MacOS/StatusBarStats";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StatusBarStatsTests/StatusBarStatsTests-Prefix.pch";
+				INFOPLIST_FILE = "StatusBarStatsTests/StatusBarStatsTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		9E19F890133C314500E053B6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/StatusBarStats.app/Contents/MacOS/StatusBarStats";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "StatusBarStatsTests/StatusBarStatsTests-Prefix.pch";
+				INFOPLIST_FILE = "StatusBarStatsTests/StatusBarStatsTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9E19F853133C314400E053B6 /* Build configuration list for PBXProject "StatusBarStats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E19F889133C314500E053B6 /* Debug */,
+				9E19F88A133C314500E053B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9E19F88B133C314500E053B6 /* Build configuration list for PBXNativeTarget "StatusBarStats" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E19F88C133C314500E053B6 /* Debug */,
+				9E19F88D133C314500E053B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9E19F88E133C314500E053B6 /* Build configuration list for PBXNativeTarget "StatusBarStatsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9E19F88F133C314500E053B6 /* Debug */,
+				9E19F890133C314500E053B6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9E19F850133C314400E053B6 /* Project object */;
+}
