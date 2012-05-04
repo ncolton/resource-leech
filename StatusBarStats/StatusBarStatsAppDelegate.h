@@ -15,6 +15,6 @@
     NSImage *pieChart;
 }
 
-- (NSImage *)buildPie;
+- (NSImage *)buildPie:(CGFloat)percentage;
 
 @end

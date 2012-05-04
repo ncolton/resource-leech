@@ -30,10 +30,10 @@
     // [statusItem setTitle:@"Status"];
     // Highlight when clicked on by user
     [statusItem setHighlightMode:YES];
-    [statusItem setImage:[self buildPie]];
+    [statusItem setImage:[self buildPie:0.12]];
 }
 
-- (NSImage *)buildPie
+- (NSImage *)buildPie:(CGFloat)percentage
 {
     CGFloat padding = 3;
     
@@ -49,9 +49,8 @@
     
     NSColor * blueishColor = [NSColor colorWithSRGBRed:0 green:0.55 blue:1 alpha:1];
     
-    CGFloat wedgePercent = 0.85;
     CGFloat endAngle = 90;
-    CGFloat startAngle = endAngle - 360 * wedgePercent;
+    CGFloat startAngle = endAngle - 360 * percentage;
     
     NSBezierPath * pieBorder = [NSBezierPath bezierPath];
     [pieBorder setLineWidth:2];
