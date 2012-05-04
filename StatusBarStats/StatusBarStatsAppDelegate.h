@@ -12,6 +12,9 @@
 @private
     IBOutlet NSMenu *statusMenu;
     NSStatusItem *statusItem;
+    NSImage *pieChart;
 }
+
+- (NSImage *)buildPie;
 
 @end

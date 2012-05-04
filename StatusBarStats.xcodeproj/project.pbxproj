@@ -197,6 +197,7 @@
 		9E19F850133C314400E053B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = OddMagic;
 			};
 			buildConfigurationList = 9E19F853133C314400E053B6 /* Build configuration list for PBXProject "StatusBarStats" */;
@@ -444,6 +445,7 @@
 				9E19F88D133C314500E053B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9E19F88E133C314500E053B6 /* Build configuration list for PBXNativeTarget "StatusBarStatsTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +454,7 @@
 				9E19F890133C314500E053B6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
