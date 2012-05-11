@@ -7,14 +7,22 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import <mach/mach.h>
 
 @interface StatusBarStatsAppDelegate : NSObject <NSApplicationDelegate> {
 @private
     IBOutlet NSMenu *statusMenu;
     NSStatusItem *statusItem;
     NSImage *pieChart;
+    NSTimer *timer;
+    
+    mach_port_t hostPort;
+    vm_size_t pageSize;
 }
 
-- (NSImage *)buildPie:(CGFloat)percentage;
+- (void)buildPie:(CGFloat)percentage;
+- (CGFloat)getMemoryInformation;
+- (void)updateStats:(NSTimer *)timer;
+- (void)updatePie;
 
 @end
