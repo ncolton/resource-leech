@@ -49,6 +49,18 @@
     [statusItem setImage:pieChart];
 }
 
+- (NSBezierPath *)buildPieWedge:(NSPoint)centerPoint endAngle:(CGFloat)endAngle startAngle:(CGFloat)startAngle radius:(CGFloat)radius
+{
+    NSBezierPath * pieWedge = [NSBezierPath bezierPath];
+    [pieWedge moveToPoint:centerPoint];
+    [pieWedge appendBezierPathWithArcWithCenter: centerPoint
+                                         radius: radius
+                                     startAngle: startAngle
+                                       endAngle: endAngle];
+    [pieWedge lineToPoint:centerPoint];
+    return pieWedge;
+}
+
 - (void)buildPie:(CGFloat)percentage
 {
     CGFloat padding = 3;
@@ -78,13 +90,8 @@
                                       startAngle: startAngle
                                         endAngle: startAngle + 360];
     
-    NSBezierPath * pieWedge = [NSBezierPath bezierPath];
-    [pieWedge moveToPoint:centerPoint];
-    [pieWedge appendBezierPathWithArcWithCenter: centerPoint
-                                         radius: radius
-                                     startAngle: startAngle
-                                       endAngle: endAngle];
-    [pieWedge lineToPoint:centerPoint];
+    NSBezierPath *pieWedge;
+    pieWedge = [self buildPieWedge:centerPoint endAngle:endAngle startAngle:startAngle radius:radius];
     
     [pieChart lockFocus]; // Draw after this
     [[NSColor grayColor] setStroke];

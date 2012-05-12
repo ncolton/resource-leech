@@ -24,5 +24,6 @@
 - (CGFloat)getMemoryInformation;
 - (void)updateStats:(NSTimer *)timer;
 - (void)updatePie;
+- (NSBezierPath *)buildPieWedge:(NSPoint)centerPoint endAngle:(CGFloat)endAngle startAngle:(CGFloat)startAngle radius:(CGFloat)radius;
 
 @end
