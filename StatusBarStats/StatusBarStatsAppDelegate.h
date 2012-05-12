@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import <mach/mach.h>
+#import "PieChartDimensions.h"
 
 @interface StatusBarStatsAppDelegate : NSObject <NSApplicationDelegate> {
 @private
@@ -15,15 +16,22 @@
     NSStatusItem *statusItem;
     NSImage *pieChart;
     NSTimer *timer;
+    PieChartDimensions *pieDimensions;
+    NSColor *wiredColor;
+    NSColor *activeColor;
+    NSColor *inactiveColor;
+    NSColor *borderColor;
     
     mach_port_t hostPort;
     vm_size_t pageSize;
 }
 
-- (void)buildPie:(CGFloat)percentage;
-- (CGFloat)getMemoryInformation;
-- (void)updateStats:(NSTimer *)timer;
+- (NSInteger)angleFromPercentage:(CGFloat)percentage;
+- (NSBezierPath *)buildPieWedgeWithCenterPoint:(NSPoint)centerPoint radius:(NSInteger)radius startAngle:(NSInteger)startAngle percentage:(CGFloat)percentage;
+- (NSImage *)buildPieFromVMData:(vm_statistics_data_t)vmData;
+- (NSBezierPath *)buildPieBorderWithCenter:(NSPoint)center radius:(NSInteger)radius;
+- (vm_statistics_data_t)fetchMemoryData;
 - (void)updatePie;
-- (NSBezierPath *)buildPieWedge:(NSPoint)centerPoint endAngle:(CGFloat)endAngle startAngle:(CGFloat)startAngle radius:(CGFloat)radius;
+- (void)updateStats:(NSTimer *)timer;
 
 @end

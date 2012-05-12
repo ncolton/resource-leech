@@ -17,6 +17,7 @@
 		9E19F883133C314500E053B6 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9E19F881133C314500E053B6 /* InfoPlist.strings */; };
 		9E19F886133C314500E053B6 /* StatusBarStatsTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 9E19F885133C314500E053B6 /* StatusBarStatsTests.h */; };
 		9E19F888133C314500E053B6 /* StatusBarStatsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E19F887133C314500E053B6 /* StatusBarStatsTests.m */; };
+		9EE1DAF2155E00860094D693 /* PieChartDimensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EE1DAF1155E00860094D693 /* PieChartDimensions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		9E19F884133C314500E053B6 /* StatusBarStatsTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "StatusBarStatsTests-Prefix.pch"; sourceTree = "<group>"; };
 		9E19F885133C314500E053B6 /* StatusBarStatsTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StatusBarStatsTests.h; sourceTree = "<group>"; };
 		9E19F887133C314500E053B6 /* StatusBarStatsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StatusBarStatsTests.m; sourceTree = "<group>"; };
+		9EE1DAF0155E00860094D693 /* PieChartDimensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieChartDimensions.h; sourceTree = "<group>"; };
+		9EE1DAF1155E00860094D693 /* PieChartDimensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieChartDimensions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				9E19F870133C314500E053B6 /* StatusBarStatsAppDelegate.m */,
 				9E19F872133C314500E053B6 /* MainMenu.xib */,
 				9E19F864133C314500E053B6 /* Supporting Files */,
+				9EE1DAF0155E00860094D693 /* PieChartDimensions.h */,
+				9EE1DAF1155E00860094D693 /* PieChartDimensions.m */,
 			);
 			path = StatusBarStats;
 			sourceTree = "<group>";
@@ -197,7 +202,7 @@
 		9E19F850133C314400E053B6 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = OddMagic;
 			};
 			buildConfigurationList = 9E19F853133C314400E053B6 /* Build configuration list for PBXProject "StatusBarStats" */;
@@ -263,6 +268,7 @@
 			files = (
 				9E19F86B133C314500E053B6 /* main.m in Sources */,
 				9E19F871133C314500E053B6 /* StatusBarStatsAppDelegate.m in Sources */,
+				9EE1DAF2155E00860094D693 /* PieChartDimensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

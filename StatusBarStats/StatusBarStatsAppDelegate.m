@@ -19,10 +19,23 @@
         NSLog(@"Unable to determine page size; using default 4096");
 		pageSize=4096;
 	} else {
-        NSLog(@"Determined page size to be %lu", pageSize);
+        NSLog(@"Determined page size to be %u", (unsigned int)pageSize);
     }
+        
+    pieDimensions = [[PieChartDimensions alloc] init];
+    [pieDimensions setThickness:[[NSStatusBar systemStatusBar] thickness]];
+    [pieDimensions setLineWidth:2];
+    [pieDimensions setPadding:3];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:60.0
+    wiredColor = [[NSColor redColor] retain];
+    activeColor = [[NSColor yellowColor] retain];
+    inactiveColor = [[NSColor colorWithSRGBRed:0
+                                        green:0.55
+                                         blue:1
+                                        alpha:1] retain];
+    borderColor = [[NSColor grayColor] retain];
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:2.0
                                              target:self
                                            selector:@selector(updateStats:)
                                            userInfo:nil
@@ -45,103 +58,121 @@
     // [statusItem setTitle:@"Status"];
     // Highlight when clicked on by user
     [statusItem setHighlightMode:YES];
-    [self buildPie:0];
-    [statusItem setImage:pieChart];
 }
 
-- (NSBezierPath *)buildPieWedge:(NSPoint)centerPoint endAngle:(CGFloat)endAngle startAngle:(CGFloat)startAngle radius:(CGFloat)radius
+- (NSInteger)angleFromPercentage:(CGFloat)percentage
 {
+    return percentage * 360;
+}
+
+- (NSBezierPath *)buildPieWedgeWithCenterPoint:(NSPoint)centerPoint radius:(NSInteger)radius startAngle:(NSInteger)startAngle percentage:(CGFloat)percentage
+{
+    NSLog(@"Called with radius %ld, start %ld°, %f", (long)radius, (long)startAngle, percentage);
+    NSInteger offset = 90;
+    NSInteger wedgeStartAngle = offset - startAngle;
+    NSInteger wedgeEndAngle = (wedgeStartAngle - [self angleFromPercentage:percentage]);
+    NSLog(@"percentage: %f, start: %ld, end: %ld", percentage, (long)wedgeStartAngle, (long)wedgeEndAngle);
+    
     NSBezierPath * pieWedge = [NSBezierPath bezierPath];
     [pieWedge moveToPoint:centerPoint];
-    [pieWedge appendBezierPathWithArcWithCenter: centerPoint
-                                         radius: radius
-                                     startAngle: startAngle
-                                       endAngle: endAngle];
+    [pieWedge appendBezierPathWithArcWithCenter:centerPoint
+                                         radius:radius
+                                     startAngle:wedgeStartAngle
+                                       endAngle:wedgeEndAngle
+                                      clockwise:YES];
     [pieWedge lineToPoint:centerPoint];
     return pieWedge;
 }
 
-- (void)buildPie:(CGFloat)percentage
+- (NSImage *)buildPieFromVMData:(vm_statistics_data_t)vmData
 {
-    CGFloat padding = 3;
+    NSUInteger totalMemory = vmData.wire_count + vmData.active_count + vmData.inactive_count + vmData.free_count;
+    NSLog(@"total memory: %lu", (unsigned long)totalMemory);
     
-    CGFloat thickness = [[NSStatusBar systemStatusBar] thickness];
+    NSInteger offsetAngle = 0;
+    CGFloat wiredPercentage = vmData.wire_count / (CGFloat)totalMemory;
+    NSLog(@"wired: %f%%", wiredPercentage);
+    NSBezierPath * pieSliceWired;
+    pieSliceWired = [[self buildPieWedgeWithCenterPoint:[pieDimensions centerPoint]
+                                                 radius:[pieDimensions radius]
+                                             startAngle:offsetAngle
+                                             percentage:wiredPercentage] retain];
+    offsetAngle = [self angleFromPercentage:wiredPercentage];
+    CGFloat activePercentage = vmData.active_count / (CGFloat)totalMemory;
+    NSBezierPath * pieSliceActive;
+    pieSliceActive = [[self buildPieWedgeWithCenterPoint:[pieDimensions centerPoint]
+                                                 radius:[pieDimensions radius]
+                                             startAngle:offsetAngle
+                                             percentage:activePercentage] retain];
+    offsetAngle = [self angleFromPercentage:wiredPercentage + activePercentage];
+    CGFloat inactivePercentage = vmData.inactive_count / (CGFloat)totalMemory;
+    NSBezierPath * pieSliceInactive;
+    pieSliceInactive = [[self buildPieWedgeWithCenterPoint:[pieDimensions centerPoint]
+                                                   radius:[pieDimensions radius]
+                                               startAngle:offsetAngle
+                                               percentage:inactivePercentage] retain];
+    NSBezierPath * pieBorder;
+    pieBorder = [[self buildPieBorderWithCenter:[pieDimensions centerPoint]
+                                        radius:[pieDimensions radius]] retain];
     NSSize imageSize;
-    imageSize.height = thickness;
-    imageSize.width = thickness - padding; // Keep the sides snug
-    
-    pieChart = [[[NSImage alloc] initWithSize:imageSize] autorelease];
-    
-    NSPoint centerPoint = NSMakePoint(imageSize.width/2, imageSize.height/2);
-    CGFloat radius = (imageSize.height - (padding * 2)) / 2;
-    
-    NSColor * blueishColor = [NSColor colorWithSRGBRed:0
-                                                 green:0.55
-                                                  blue:1
-                                                 alpha:1];
-    
-    CGFloat endAngle = 90;
-    CGFloat startAngle = endAngle - 360 * percentage;
-    
-    NSBezierPath * pieBorder = [NSBezierPath bezierPath];
-    [pieBorder setLineWidth:2];
-    [pieBorder appendBezierPathWithArcWithCenter: centerPoint
-                                          radius: radius
-                                      startAngle: startAngle
-                                        endAngle: startAngle + 360];
-    
-    NSBezierPath *pieWedge;
-    pieWedge = [self buildPieWedge:centerPoint endAngle:endAngle startAngle:startAngle radius:radius];
-    
-    [pieChart lockFocus]; // Draw after this
-    [[NSColor grayColor] setStroke];
-    [blueishColor setFill];
+    imageSize.height = [pieDimensions height];
+    imageSize.width = [pieDimensions width];
+    NSImage *pie = [[NSImage alloc] initWithSize:imageSize];
+    [pie lockFocus];
+    [borderColor setStroke];
     [pieBorder stroke];
-    [pieWedge fill];
-    [pieChart unlockFocus]; // Finish drawing before this
+    [wiredColor setFill];
+    [pieSliceWired fill];
+    [activeColor setFill];
+    [pieSliceActive fill];
+    [inactiveColor setFill];
+    [pieSliceInactive fill];
+    [pie unlockFocus];
+    
+    [pieBorder release];
+    [pieSliceWired release];
+    [pieSliceActive release];
+    [pieSliceInactive release];
+    
+    return [pie autorelease];
 }
 
-- (CGFloat)getMemoryInformation
+- (NSBezierPath *)buildPieBorderWithCenter:(NSPoint)center radius:(NSInteger)radius
+{
+    NSBezierPath * pieBorder = [NSBezierPath bezierPath];
+    [pieBorder setLineWidth:[pieDimensions lineWidth]];
+    [pieBorder appendBezierPathWithArcWithCenter:center
+                                          radius:radius
+                                      startAngle:0
+                                        endAngle:360];
+    return pieBorder;
+}
+
+- (vm_statistics_data_t)fetchMemoryData
 {
     vm_statistics_data_t vmData;
     unsigned int count=HOST_VM_INFO_COUNT;
-    kern_return_t retVal = host_statistics(mach_host_self(),
-                                           HOST_VM_INFO,
-                                           (host_info_t)&vmData,
-                                           &count);
-    if (retVal != KERN_SUCCESS)
+    kern_return_t hostOpStat = host_statistics(mach_host_self(), HOST_VM_INFO,
+                                               (host_info_t)&vmData, &count);
+    if (hostOpStat != KERN_SUCCESS)
     {
         NSLog(@"Unable to get VM statistics");
-        // TODO: Toss exception? Error? Exit?
-        return 0;
     }
     
-    NSLog(@"active: %u", vmData.active_count);
-    NSLog(@"inactive: %u", vmData.inactive_count);
-    NSLog(@"wire: %u", vmData.wire_count);
-    NSLog(@"free: %u", vmData.free_count);
-    
-    natural_t usedMemory = vmData.active_count + vmData.inactive_count + vmData.wire_count;
-    natural_t freeMemory = vmData.free_count;
-    natural_t totalMemory = vmData.active_count + vmData.inactive_count + vmData.wire_count + vmData.free_count;
-    
-    NSLog(@"Total:\t%lu bytes", totalMemory * pageSize);
-    NSLog(@"Used :\t%lu bytes", usedMemory * pageSize);
-    NSLog(@"Free :\t%lu bytes", freeMemory * pageSize);
-    
-    CGFloat memoryPercent = (CGFloat) usedMemory / (CGFloat) totalMemory;
-    return memoryPercent;
+    return vmData;
 }
-
 
 - (void)updatePie
 {
-    CGFloat memoryPercent = [self getMemoryInformation];
-    NSString *percent = [NSString stringWithFormat:@"%i%%", (NSInteger)(memoryPercent * 100)];
-    [self buildPie:memoryPercent];
-    [statusItem setImage:pieChart];
-    [statusItem setTitle:percent];
-    //[[statusItem view] setNeedsDisplay:YES];
+    vm_statistics_data_t vmdata = [self fetchMemoryData];
+    NSLog(@"wired: %ld, active: %ld, inactive: %ld, free: %ld",
+          (long)vmdata.wire_count,
+          (long)vmdata.active_count,
+          (long)vmdata.inactive_count,
+          (long)vmdata.free_count);
+    NSImage * newPie = [[self buildPieFromVMData:vmdata] retain];
+    [statusItem setImage:newPie];
+    [newPie autorelease];
 }
 
 - (void)updateStats:(NSTimer *)timer
