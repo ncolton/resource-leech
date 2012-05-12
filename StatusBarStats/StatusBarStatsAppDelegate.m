@@ -35,7 +35,7 @@
                                         alpha:1] retain];
     borderColor = [[NSColor grayColor] retain];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:2.0
+    timer = [NSTimer scheduledTimerWithTimeInterval:60.0
                                              target:self
                                            selector:@selector(updateStats:)
                                            userInfo:nil
@@ -67,11 +67,10 @@
 
 - (NSBezierPath *)buildPieWedgeWithCenterPoint:(NSPoint)centerPoint radius:(NSInteger)radius startAngle:(NSInteger)startAngle percentage:(CGFloat)percentage
 {
-    NSLog(@"Called with radius %ld, start %ld°, %f", (long)radius, (long)startAngle, percentage);
     NSInteger offset = 90;
     NSInteger wedgeStartAngle = offset - startAngle;
     NSInteger wedgeEndAngle = (wedgeStartAngle - [self angleFromPercentage:percentage]);
-    NSLog(@"percentage: %f, start: %ld, end: %ld", percentage, (long)wedgeStartAngle, (long)wedgeEndAngle);
+    NSLog(@"radius %ld, start %ld°, %ld, span %ld° to %ld°", (long)radius, (long)startAngle, (long)(percentage * 100), (long)wedgeStartAngle, (long)wedgeEndAngle);
     
     NSBezierPath * pieWedge = [NSBezierPath bezierPath];
     [pieWedge moveToPoint:centerPoint];
@@ -87,11 +86,9 @@
 - (NSImage *)buildPieFromVMData:(vm_statistics_data_t)vmData
 {
     NSUInteger totalMemory = vmData.wire_count + vmData.active_count + vmData.inactive_count + vmData.free_count;
-    NSLog(@"total memory: %lu", (unsigned long)totalMemory);
     
     NSInteger offsetAngle = 0;
     CGFloat wiredPercentage = vmData.wire_count / (CGFloat)totalMemory;
-    NSLog(@"wired: %f%%", wiredPercentage);
     NSBezierPath * pieSliceWired;
     pieSliceWired = [[self buildPieWedgeWithCenterPoint:[pieDimensions centerPoint]
                                                  radius:[pieDimensions radius]
