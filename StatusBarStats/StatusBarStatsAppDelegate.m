@@ -70,7 +70,7 @@
     NSInteger offset = 90;
     NSInteger wedgeStartAngle = offset - startAngle;
     NSInteger wedgeEndAngle = (wedgeStartAngle - [self angleFromPercentage:percentage]);
-    NSLog(@"radius %ld, start %ld°, %ld, span %ld° to %ld°", (long)radius, (long)startAngle, (long)(percentage * 100), (long)wedgeStartAngle, (long)wedgeEndAngle);
+//    NSLog(@"radius %ld, start %ld°, %ld, span %ld° to %ld°", (long)radius, (long)startAngle, (long)(percentage * 100), (long)wedgeStartAngle, (long)wedgeEndAngle);
     
     NSBezierPath * pieWedge = [NSBezierPath bezierPath];
     [pieWedge moveToPoint:centerPoint];
@@ -162,11 +162,11 @@
 - (void)updatePie
 {
     vm_statistics_data_t vmdata = [self fetchMemoryData];
-    NSLog(@"wired: %ld, active: %ld, inactive: %ld, free: %ld",
-          (long)vmdata.wire_count,
-          (long)vmdata.active_count,
-          (long)vmdata.inactive_count,
-          (long)vmdata.free_count);
+//    NSLog(@"wired: %ld, active: %ld, inactive: %ld, free: %ld",
+//          (long)vmdata.wire_count,
+//          (long)vmdata.active_count,
+//          (long)vmdata.inactive_count,
+//          (long)vmdata.free_count);
     NSImage * newPie = [[self buildPieFromVMData:vmdata] retain];
     [statusItem setImage:newPie];
     [newPie autorelease];
